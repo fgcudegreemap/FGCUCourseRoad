@@ -1,0 +1,105 @@
+body {
+	background-color:lightblue;
+  padding:0px;
+}
+
+#divider {
+  height:10px;
+  background-color:black;
+}
+#refresh {
+  display: inline-block;
+  float: right;
+}
+#courseDescriptionInput {
+  width:200px;
+}
+#major1Dropdown {
+  width:300px;
+}
+#major2Dropdown {
+  width:300px;
+}
+#minor1Dropdown {
+  width:300px;
+}
+#minor2Dropdown {
+  width:300px;
+}
+#courseInfoButton {
+  display: inline-block;
+  float: right;
+}
+#addInput {
+	display: inline-block;
+	float:right;
+}
+#removeInput {
+	display: inline-block;
+	float: right;
+}
+#semesterAdd {
+	display: inline-block;
+}
+#semesterRemove {
+	display: inline-block;
+}
+#imageholder {
+	float:left;
+}
+#instructions: {
+	float:right;
+}
+
+#genEdInfo {
+  float: left;
+  color: lightblue;
+  width: 25%;
+  border-style: solid;
+  border-color: #092869;
+  border-width:5px;
+  padding:15px;
+  background-color: #08794B;
+}
+
+
+#degreeInfo {
+  float: left;
+  color: lightblue;
+  width: 25%;
+  border-style: solid;
+  border-color: #092869;
+  border-width:5px;
+  padding:15px;
+  background-color: #08794B;
+}
+#container2 {
+  display: inline-block;
+  width:40%;
+}
+#scheduleInfo {
+  float: left;
+  width:80%;
+  border-style: solid;
+  border-color: #092869;
+  border-width:5px;
+  color: lightblue;
+  padding:15px;
+  background-color: #08794B;
+}
+#prereqsInfo {
+	display: inline-block;
+	width:80%;
+	background-color: #08794B;
+	color: lightblue;
+	border-style: solid;
+  border-color: #092869;
+  padding:15px;
+  border-width:5px;
+}
+#courseName {
+	width: 200px;
+}
+#courseCode {
+	float:right;
+}

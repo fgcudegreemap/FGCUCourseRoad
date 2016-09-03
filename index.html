@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<head>
+  <title>FGCU Degree Mapper</title>
+  <META http-equiv="Content-Style-Type" content="text/css">
+  <link rel="stylesheet" type="text/css" href="FGCUStyle.css">
+  <style type="text/css">
+  	tab0 { padding-left: 0em; }
+    tab1 { padding-left: 1em; }
+    tab2 { padding-left: 2em; }
+    tab3 { padding-left: 3em; }
+    tab4 { padding-left: 4em; }
+    tab5 { padding-left: 5em; }
+    tab6 { padding-left: 6em; }
+    greenText { color: lightgreen; }
+    redText { color: orangered; }
+    orangeText { color: orange; }
+    yellowText { color: yellow; }
+  </style>
+</head>
+
+<html>
+<body>
+  <script type="text/javascript" src="FGCUClasses.js"></script>
+  <script type="text/javascript" src="FGCUMajors.js"></script>
+  <script type="text/javascript" src="FGCUMinors.js"></script>
+  <script type="text/javascript" src="FGCURuntimeFunctions.js"></script>
+<div id="container1">
+  <div id="instructions">
+	<img src="FGCUImage.png" style="width:256px;height:256px;" align="left"><br>
+  </div><div id="instructions">
+	<label>FGCU Degree Mapper</label>
+	<p>This tool is not endorsed by Florida Gulf Coast University and is only
+	intended as a reference to supplement the advising process. Please feel free
+	to use it to understand the requirements of your degree and whether prerequisite(s)
+	for your intended course schedule are satisfied.</p>
+	<p>To use this tool, select your intended major and add classes by their class code
+	to the desired semester or time period in your course schedule. If you want to "hide"
+	long lists of extra classes that fulfill a particular requirement after you've completed
+	it, select that option as well. The system will automatically update to show you what
+	requirements and prerequisite(s) you have met or still require. Please note, the
+	system currently only accepts courses listed in the FGCU Course Catalog for the Fall
+	2016 semester. Courses must be entered in the format "ABC XXXX" or "ABC XXXXX" without quotations.</p>
+	<p>Please note, this current version of the Degree Mapper does not support corequisite
+	courses. You can enter them, but there's still some work to be done to register that
+	your class requires a corequisite. Also, if you have AP, transfer, or other non-coursework
+	credits, please enter them as an equivalent FGCU class, we aren't able to support those
+	kinds of inputs yet. Beyond that, if you have questions, if any errors come up, or a course is missing,
+	etcetera, please email Jackson Graves at jrgraves@mit.edu with feedback to implement a fix.</p>
+  </div>
+</div>
+<div id="divider"></div><br>
+<div id="genEdInfo">
+	<label>FGCU General Education Program Information</label><br>
+	<p>The following are the requirements for the FGCU General Education Program. All students are required to complete the program. Be sure to pick general education courses that satisfy prerequisite(s) for your intended major and course of study. Please identify whether you are a "Science" or a "Non-Science" student to get the appropriate program requirements for you.</p>
+	<label>Are you a Science or a Non-Science major?</label>
+	<select id="scienceDropdown" onChange="updateViews();">
+		<option value="Science">Science</option>
+		<option value="Non-Science">Non-Science</option>
+	</select><br>
+	<p id="generalEducationOutput"></p><br>
+</div>
+<div id="degreeInfo">
+	<label>Degree Program Information</label><br><br>
+	<label>Please select your major:</label><br>
+	<select id="major1Dropdown" onChange="updateViews();"></select><br><br>
+	<label>Do you have a double-major? What's the second major?</label><br>
+	<select id="major2Dropdown" onChange="updateViews();"></select><br><br>
+	<label>Select your minor, if you're pursuing one:</label><br>
+	<select id="minor1Dropdown" onChange="updateViews();"></select><br><br>
+	<label>Are you pursuing a double-minor? What's the second minor?</label><br>
+	<select id="minor2Dropdown" onChange="updateViews();"></select><br><br>
+	<label>Hide extra classes after requirements are met?</label><br>
+	<select id="hiddenDropdown" onChange="updateViews();">
+		<option value="Yes">Yes</option>
+		<option value="No">No</option>
+	</select><br><br>
+	<p id="major1Output"></p><br>
+	<p id="major2Output"></p><br>
+	<p id="minor1Output"></p><br>
+	<p id="minor2Output"></p><br>
+	<p id="creditOutput"></p><br>
+</div>
+<div id="container2">
+	<div id="scheduleInfo">
+		<label>Not sure what the course number for your class is?</label><br>
+		<input type="text" id="courseName" title="Class Name" style="color:#888;" value="What's the name of your class?" onfocus="inputFocus(this);" onblur="inputBlur(this);" />
+		<input type="button" id="courseCode" value="Check Course Number" onclick="checkCourseNumber();"><br>
+		<p id="courseNumberOutput"></p><br>
+		<label>Looking for information about a course such as the description, credits, etc?</label><br>
+		<input type="text" id="courseDescriptionInput" title="Course Description" style="color:#888;" value="Enter the course name or code" onfocus="inputFocus(this);" onblur="inputBlur(this);" />
+		<input type="button" id="courseInfoButton" title="Course Info Button" value="Get Course Info" onclick="pullCourseInfo();"><br>
+		<p id="courseDescriptionOutput"></p><br>
+		<label>Schedule Information</label><br>
+		<label>Please enter your name:</label>
+		<input type="text" id="nameInput" title="Name Input" style="color:#888;" value="What's your name?" onfocus="inputFocus(this);" onblur="inputBlur(this);" />
+		<input type="button" id="refresh" value="Refresh Schedule" onclick="updateViews();"><br>
+		<input type="text" id="classAdd" title="Class Add" style="color:#888;" value="Add a class" onfocus="inputFocus(this);" onblur="inputBlur(this);" />
+		<select id="semesterAdd"></select>
+		<input type="button" id="addInput" value="Add class to schedule" onclick="addClass();"><br>
+		<input type="text" id="classRemove" title="Class Remove" style="color:#888;" value="Remove a class" onfocus="inputFocus(this);" onblur="inputBlur(this);" />
+		<select id="semesterRemove"></select>
+		<input type="button" id="removeInput" value="Remove class from schedule" onclick="removeClass();"><br>
+		<p id="scheduleOutput"></p><br>
+	</div><br><div id="prereqsInfo">
+		<label>Prerequisite Information</label>
+		<p id="prereqsOutput"></p>
+	</div>
+</div>
+</body>
+</html>

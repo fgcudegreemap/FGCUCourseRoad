@@ -1,0 +1,123 @@
+tab0 { padding-left: 0em; }
+tab1 { padding-left: 1em; }
+tab2 { padding-left: 2em; }
+tab3 { padding-left: 3em; }
+tab4 { padding-left: 4em; }
+tab5 { padding-left: 5em; }
+tab6 { padding-left: 6em; }
+greenText { color: lightgreen; }
+redText { color: tomato; }
+orangeText { color: orange; }
+yellowText { color: yellow; }
+    
+select {
+    width: 100%;
+    border:0;
+    margin-top:12px;
+    margin-bottom:12px;
+    background:white;
+    color:green;
+    height:100%;
+    font-weight: bold;
+    font-size:16px;
+    border:1px solid #d8d8d8;
+}
+input[type="text"] {
+    width: 100%;
+    background-color: white;
+    border: none;
+    text-indent: 16px;
+    padding-top:12px;
+    padding-bottom:12px;
+    text-align: left;
+    height: 100%;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+}
+input[type="button"] {
+    width: 100%;
+    background-color: #008CBA; /* Green */
+    border: 3px white;
+    border-style: solid;
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    float:right;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    border-color: #092869;
+    border-style: solid;
+    border-width:2px;
+    width: 100%;
+}
+td, th {
+    border: 1px solid #dddddd;
+}
+tr {
+    background-color: #08794B;
+}
+label.hiddenTerm {
+    display:none;
+}
+label.visibleTerm {
+    display: block;
+    width:100%;
+    text-align: center;
+    vertical-align: center;
+    padding-top:10px;
+    padding-bottom:10px;
+    color: white;
+    background-color: limegreen;
+    font-size:16px;
+    font-weight: bold;
+}
+.headerCell {
+    text-align: center;
+    color: white;
+    height: 50px;
+    background-color:limegreen;
+    font-weight: bold;
+}
+.dividerCell {
+    height: 20px;
+    background-color: limegreen;
+}
+.outputCell {
+    height: 100%;
+    background-color: aliceblue;
+    padding-left: 15px;
+}
+.imageCell {
+    background-color: aliceblue;
+}
+.infoCell {
+    background-color:lightblue;
+    padding-left: 15px;
+}
+.specialCell {
+    height: 100%;
+}
+.term {
+    text-align:center;
+    background-color: seagreen;
+}
+.specialButton {
+    height: 50px;
+    border: 3px white;
+    border-style: solid;
+    color: white;
+    padding: 12px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 16px;
+    font-weight: bold;
+}
